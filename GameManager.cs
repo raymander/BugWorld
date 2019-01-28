@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine("DeathAnimation");
         timer.Stop();     
-        healthBar.SetActive(false);
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -60,6 +59,7 @@ public class GameManager : MonoBehaviour
     IEnumerator DeathAnimation()
     {
         yield return new WaitForSeconds(0.3f);
+        healthBar.SetActive(false);
         gameOverPanel.GetComponent<Animator>().enabled = true;
     }
 
